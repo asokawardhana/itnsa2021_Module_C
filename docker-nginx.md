@@ -33,11 +33,11 @@ server {
 ```
 
 ```
-docker run -d \
+# docker run -d \
 -v /opt/farm_1/html:/usr/share/nginx/html \
 -v /opt/farm_1/conf:/etc/nginx/conf.d/ \
 --restart=always \
---name farm1 \
+--name farm-1 \
 nginx:latest
 ```
 
@@ -80,7 +80,7 @@ server {
 -v /opt/farm_2/html:/usr/share/nginx/html \
 -v /opt/farm_2/conf:/etc/nginx/conf.d/ \
 --restart=always \
---name farm2 \
+--name farm-2 \
 nginx:latest
 ```
 
@@ -129,4 +129,4 @@ server {
 
 > \# docker cp /opt/farm_lb/certs farm-lb:/etc/nginx/
 
-> \# docker restart farmlb
+> \# docker restart farm-lb

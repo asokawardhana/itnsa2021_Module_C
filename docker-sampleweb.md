@@ -29,9 +29,9 @@ CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=8080"]
 
 ## Run container sampleweb
 
-> docker run -d \
-  -p 80:8080 \
-  --restart=always \
-  --name sampleweb \
+> docker run -d \\ 
+  -p 80:8080 \\
+  --restart=always \\
+  --name sampleweb \\
   sampleweb:latest
 

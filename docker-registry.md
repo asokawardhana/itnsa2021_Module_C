@@ -21,14 +21,15 @@ registry:2
 > \# docker push localhost:5000/webserver.base
 
 
-## Test insecure pull images 
-### add to /etc/docker/daemon.json on docker host :
+## Test insecure pull images on Docker Host
 
 > /# vim /etc/docker/daemon.json
 
 ```
   "insecure-registries" : ["myregistrydomain.com:5000"]
 ```
+
+> \# docker pull 192.168.41.108:5000/nginx:latest
 
 ## Docker Registry with ssl
 > \# mkdir -p certs

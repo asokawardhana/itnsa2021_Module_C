@@ -31,7 +31,7 @@ registry:2
   "insecure-registries" : ["myregistrydomain.com:5000"]
 ```
 
-> \# docker pull 192.168.41.108:5000/nginx:latest
+> \# docker pull 192.168.41.108:5000/webserver.base
 
 ## Docker Registry with ssl
 > \# mkdir -p certs

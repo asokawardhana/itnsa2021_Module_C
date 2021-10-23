@@ -54,8 +54,8 @@ registry:2
 # docker run -d \
 --restart=always --name registry \
 -v "$(pwd)"/certs:/certs -e REGISTRY_HTTP_ADDR=0.0.0.0:5000 \
--e REGISTRY_HTTP_TLS_CERTIFICATE=/opt/registry/certs/registry.itnsa2021.id.crt \
--e REGISTRY_HTTP_TLS_KEY=/opt/registry/certs/registry.itnsa2021.id.key \
+-e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/registry.itnsa2021.id.crt \
+-e REGISTRY_HTTP_TLS_KEY=/certs/registry.itnsa2021.id.key \
 -p 5000:5000 \
 registry:2 
 ```

@@ -34,9 +34,9 @@ registry:2
 > \# docker pull 192.168.41.108:5000/webserver.base
 
 ## Docker Registry with ssl
-> \# mkdir -p certs
+> \# mkdir -p /opt/registry/certs
 
-> \# cd certs
+> \# cd /opt/registry/
 
 > \# openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/registry.itnsa2021.id.key -addext "subjectAltName = DNS:registry.itnsa2021.id" -x509 -days 365 -out certs/registry.itnsa2021.id.crt
 
@@ -44,9 +44,9 @@ registry:2
 ### on Docker Server :
 > \# mkdir -p /etc/docker/certs.d/registry.itnsa2021.id:5000
 
-> \# cp registry.itnsa2021.id.crt /etc/docker/certs.d/registry.itnsa2021.id:5000/ca.crt
+> \# cp /opt/registry/certs/registry.itnsa2021.id.crt /etc/docker/certs.d/registry.itnsa2021.id:5000/ca.crt
 
-> \# cp registry.itnsa2021.id.crt /usr/local/share/ca-certificates/ca.crt
+> \# cp /opt/registry/certs/registry.itnsa2021.id.crt /usr/local/share/ca-certificates/ca.crt
 
 > \# update-ca-certificates
 
@@ -54,8 +54,8 @@ registry:2
 # docker run -d \
 --restart=always --name registry \
 -v "$(pwd)"/certs:/certs -e REGISTRY_HTTP_ADDR=0.0.0.0:5000 \
--e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/registry.itnsa2021.id.crt \
--e REGISTRY_HTTP_TLS_KEY=/certs/registry.itnsa2021.id.key \
+-e REGISTRY_HTTP_TLS_CERTIFICATE=/opt/registry/certs/registry.itnsa2021.id.crt \
+-e REGISTRY_HTTP_TLS_KEY=/opt/registry/certs/registry.itnsa2021.id.key \
 -p 5000:5000 \
 registry:2 
 ```

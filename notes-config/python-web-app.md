@@ -49,7 +49,7 @@ if __name__ == "__main__":
 ## Install Flash & test run
 > pip3 install Flask
 
-> export FLASK_APP=main.py
+> export FLASK_APP=/opt/sample-web/main.py
 
 > export FLASK_RUN_PORT=8080
 

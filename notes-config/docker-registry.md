@@ -1,4 +1,6 @@
 ## Docker Registry
+> \# docker pull registry:2
+
 ```
 # docker run -d \
 -p 5000:5000 \
@@ -16,7 +18,7 @@ registry:2
 
 > \# docker pull nginx:latest
 
-> \# docker tag webserver.base localhost:5000/nginx:latest
+> \# docker tag nginx:latest localhost:5000/webserver.base
 
 > \# docker push localhost:5000/webserver.base
 
